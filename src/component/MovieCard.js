@@ -1,10 +1,11 @@
  import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import ReactStars from 'react-rating-stars-component';
+import { Link } from 'react-router-dom';
  
  function MovieCard( {movie}) {
    return (
-     <div>
+ <Link to={ `/Trailer/${movie.id}`} style={{TexteDecoration:"none",color:"black"}} >
         <Card style={{ width: '18rem', margin:'20px' }}>
       <Card.Img variant="top" src={movie.posterURL} />
       <Card.Body>
@@ -18,8 +19,9 @@ import ReactStars from 'react-rating-stars-component';
         <ReactStars count={5}  size={24} activeColor="#ffd700" edit= { false } value={movie.rating}/>,
       </Card.Body>
     </Card>
-     </div>
-   )
+    </Link>  
+     
+   );
  }
  
  export default MovieCard
